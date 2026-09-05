@@ -3,9 +3,24 @@
   :x [LibraryType
       NativeLibrarySpec
       ResolvedLinkerFlags
+      KernelSyscall
+      make-kernel-call
       format-shared-lib-name
       resolve-library-target]
   :i [(platform :a plat)])
+
+(dfs KernelSyscall
+  (:f symbol Str "Target kernel function symbol e.g. execve or fd_write")
+  (:f abi-kind Str "Calling convention e.g. posix, wasi, or win32")
+  (:f direct-token Str "Canonical single-token representation: :k"))
+
+(df make-kernel-call [(symbol Str) (abi Str)] -> KernelSyscall
+  :d "Instantiates single-token kernel syscall specification (:k)."
+  (KernelSyscall
+    :symbol symbol
+    :abi-kind abi
+    :direct-token ":k"))
+
 
 (dfe LibraryType
   (:c lib-dynamic [] "Dynamically linked shared object (.dylib, .so, .dll)")
