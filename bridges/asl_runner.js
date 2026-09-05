@@ -20,6 +20,7 @@ Commands:
   gate [files...]    Run pure verification gate suite across files
   build <file>       Compile ASL to standalone target code
   inspect <binary>   Inspect trailing 16-byte ASLPACK footer
+  intel [options]    Run native code intelligence graph or MCP server
   version            Display toolchain version
   help               Display this usage guide
 `);
@@ -115,6 +116,24 @@ async function main() {
     case "inspect":
       await handleInspect(cmdArgs[0]);
       break;
+
+    case "intel": {
+      const intelPath = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../../intel/bridges/mcp_server.js");
+      const { McpServer } = await import(intelPath);
+      const server = new McpServer(process.cwd());
+      if (cmdArgs.includes("--status")) {
+        console.log(server.executeTool("asl_intel_status", {}));
+      } else if (cmdArgs.includes("--search")) {
+        const qIdx = cmdArgs.indexOf("--search") + 1;
+        console.log(server.executeTool("asl_intel_search", { query: cmdArgs[qIdx] || "" }));
+      } else if (cmdArgs.includes("--impact")) {
+        const symIdx = cmdArgs.indexOf("--impact") + 1;
+        console.log(server.executeTool("asl_intel_impact", { symbol: cmdArgs[symIdx] || "" }));
+      } else {
+        server.startStdio();
+      }
+      break;
+    }
 
     default:
       console.error(`Unknown command '${cmd}'. Run 'asl help' for usage.`);
