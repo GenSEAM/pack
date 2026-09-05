@@ -29,3 +29,4 @@
 |---|---|---|---|---|
 | (Baseline) | Tier 0 | Direct | Green | Initialized `@genseam/asl-pack`, runtime matrix, and platform triples |
 | `pack-standalone-bundler` | Tier 1 | Direct | Green | Fixed 16-byte trailer ("ASLPACK!"), bundle inspector, macOS codesign |
+| `pack-ffi-pc-libraries` | Tier 1 | Direct | Green | Native FFI library resolver (.dylib/.so/.dll), framework and Windows flags |
