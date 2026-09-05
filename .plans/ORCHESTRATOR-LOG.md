@@ -29,5 +29,7 @@
 |---|---|---|---|---|
 | (Baseline) | Tier 0 | Direct | Green | Initialized `@genseam/asl-pack`, runtime matrix, and platform triples |
 | `pack-standalone-bundler` | Tier 1 | Direct | Green | Fixed 16-byte trailer ("ASLPACK!"), bundle inspector, macOS codesign |
+| `pack-selfhost-asl-cli` | Tier 1 | Direct | Green | Pure ASL CLI & gate runner in `asl/bin/asl`, zero-python launcher |
 | `pack-ffi-pc-libraries` | Tier 1 | Direct | Green | Native FFI library resolver (.dylib/.so/.dll), framework and Windows flags |
 | `pack-mobile-targets` | Tier 1 | Direct | Green | Swift Package (AOT) for iOS and Kotlin JNI (WAMR) for Android |
+| `pack-decommission-python` | Tier 1 | Direct | Green | Pure self-hosted CLI parity verified, zero python dependency for dev gates |
