@@ -47,7 +47,7 @@
   (let [(p-mac (plat/make-platform (plat/os-macos) (plat/arch-arm64)))
         (spec (pk/BuildSpec
                 :app-name "asl"
-                :version "0.3.0"
+                :version "0.1.0"
                 :entry-module "src/cli.asl"
                 :target-platform p-mac
                 :environment (rt/env-cli)
