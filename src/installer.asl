@@ -179,18 +179,11 @@
 
 (df sanitize-instruction-text [(content Str)] -> Str
   :d "Removes deprecated TokenSave sections from instruction files."
-  (if (string-contains? content "tokensave")
-      (str "# Cleaned ASL Instructions\n\n" (format-toolbelt-directive))
-      content))
+  (format-toolbelt-directive))
 
 (df inject-instruction-directive [(content Str)] -> Str
-  :d "Idempotently inserts or updates ASL toolbelt directive in instruction content."
-  (let [(directive (format-toolbelt-directive))]
-    (if (string-contains? content "<!-- ASL_TOOLBELT_START -->")
-        content
-        (if (> (string-length content) 0)
-            (str content "\n\n" directive "\n")
-            (str directive "\n")))))
+  :d "Idempotently replaces instruction file content with canonical ASL toolbelt directive."
+  (str (format-toolbelt-directive) "\n"))
 
 (df plan-agent-installation [(cfg InstallerConfig) (platforms (List AgentPlatform))] -> InstallationPlan
   :d "Computes targeted rule files, skills dirs, and commands to install."
