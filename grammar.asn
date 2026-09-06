@@ -24,6 +24,7 @@
     (:sym :name "SwiftPackageSpec" :kind :type :tokens 1)
     (:sym :name "KernelSyscall" :kind :type :tokens 1)
     (:sym :name "DistConfig" :kind :type :tokens 1)
+    (:sym :name "ReleasePlan" :kind :type :tokens 1)
 
     ;; 2-Token Symbols (with :rationale)
     (:sym :name "plan-package" :kind :fn :tokens 2
@@ -96,4 +97,20 @@
           :rationale "Emits NPM package manifest for global CLI and NPX distribution")
     (:sym :name "emit-npm-bin" :kind :fn :tokens 3
           :rationale "Emits Node executable dispatcher for NPM and NPX execution")
+    (:sym :name "make-release-plan" :kind :fn :tokens 3
+          :rationale "Initializes release specification parameters")
+    (:sym :name "emit-release-script-sh" :kind :fn :tokens 4
+          :rationale "Emits automated release pipeline script")
+    (:sym :name "emit-upgrade-script-sh" :kind :fn :tokens 4
+          :rationale "Emits atomic in-place binary upgrade script")
+    (:sym :name "emit-version-asn" :kind :fn :tokens 3
+          :rationale "Emits release metadata manifest in ASN format")
+    (:sym :name "test-release-plan" :kind :fn :tokens 3
+          :rationale "Verifies release plan parameters")
+    (:sym :name "test-release-script-generation" :kind :fn :tokens 4
+          :rationale "Verifies release script generation")
+    (:sym :name "test-upgrade-script-generation" :kind :fn :tokens 4
+          :rationale "Verifies upgrade script generation")
+    (:sym :name "test-version-asn-generation" :kind :fn :tokens 4
+          :rationale "Verifies version.asn manifest generation")
   ])
