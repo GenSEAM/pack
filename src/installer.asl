@@ -144,6 +144,7 @@
       (list (str home "/.gemini/config/skills")
             (str home "/.gemini/skills"))
       (list (str home "/.gemini/config/AGENTS.md")
+            (str home "/.gemini/AGENTS.md")
             (str home "/.gemini/config/rules/asl-toolbelt.md"))
       (list))
     (make-agent-platform
