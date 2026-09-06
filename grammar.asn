@@ -23,6 +23,7 @@
     (:sym :name "KotlinTargetSpec" :kind :type :tokens 1)
     (:sym :name "SwiftPackageSpec" :kind :type :tokens 1)
     (:sym :name "KernelSyscall" :kind :type :tokens 1)
+    (:sym :name "DistConfig" :kind :type :tokens 1)
 
     ;; 2-Token Symbols (with :rationale)
     (:sym :name "plan-package" :kind :fn :tokens 2
@@ -83,4 +84,16 @@
           :rationale "Verifies bundle footer serialization integrity")
     (:sym :name "test-codesign-detection" :kind :fn :tokens 3
           :rationale "Verifies codesigning requirement logic across target OS variants")
+    (:sym :name "make-dist-config" :kind :fn :tokens 3
+          :rationale "Initializes release distribution parameters and artifact paths")
+    (:sym :name "emit-install-sh" :kind :fn :tokens 3
+          :rationale "Emits POSIX installer script with binary download and source fallback")
+    (:sym :name "emit-install-ps1" :kind :fn :tokens 3
+          :rationale "Emits Windows PowerShell one-line installer script")
+    (:sym :name "emit-build-from-source-sh" :kind :fn :tokens 4
+          :rationale "Emits automated shell script to compile and verify ASL from source")
+    (:sym :name "emit-npm-package-json" :kind :fn :tokens 4
+          :rationale "Emits NPM package manifest for global CLI and NPX distribution")
+    (:sym :name "emit-npm-bin" :kind :fn :tokens 3
+          :rationale "Emits Node executable dispatcher for NPM and NPX execution")
   ])
