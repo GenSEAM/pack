@@ -25,6 +25,10 @@
     (:sym :name "KernelSyscall" :kind :type :tokens 1)
     (:sym :name "DistConfig" :kind :type :tokens 1)
     (:sym :name "ReleasePlan" :kind :type :tokens 1)
+    (:sym :name "SlashCommandSpec" :kind :type :tokens 1)
+    (:sym :name "AgentPlatform" :kind :type :tokens 1)
+    (:sym :name "InstallerConfig" :kind :type :tokens 1)
+    (:sym :name "InstallationPlan" :kind :type :tokens 1)
 
     ;; 2-Token Symbols (with :rationale)
     (:sym :name "plan-package" :kind :fn :tokens 2
@@ -113,4 +117,36 @@
           :rationale "Verifies upgrade script generation")
     (:sym :name "test-version-asn-generation" :kind :fn :tokens 4
           :rationale "Verifies version.asn manifest generation")
+    (:sym :name "format-toolbelt-directive" :kind :fn :tokens 3
+          :rationale "Emits canonical ASL toolbelt directive for agent instructions")
+    (:sym :name "format-slash-asl" :kind :fn :tokens 3
+          :rationale "Emits slash command definition for asl batch rpc mode")
+    (:sym :name "format-slash-asl-build" :kind :fn :tokens 4
+          :rationale "Emits slash command definition for asl build toolbelt mode")
+    (:sym :name "make-agent-platform" :kind :fn :tokens 3
+          :rationale "Constructs AgentPlatform descriptor for agent environment")
+    (:sym :name "default-agent-platforms" :kind :fn :tokens 3
+          :rationale "Returns standard supported agent platforms")
+    (:sym :name "make-installer-config" :kind :fn :tokens 3
+          :rationale "Initializes installer configuration with flags")
+    (:sym :name "sanitize-instruction-text" :kind :fn :tokens 3
+          :rationale "Removes deprecated TokenSave sections from instruction files")
+    (:sym :name "inject-instruction-directive" :kind :fn :tokens 3
+          :rationale "Idempotently inserts or updates ASL toolbelt directive in instruction content")
+    (:sym :name "plan-agent-installation" :kind :fn :tokens 3
+          :rationale "Computes targeted rule files skills dirs and commands to install")
+    (:sym :name "emit-standalone-installer-script" :kind :fn :tokens 4
+          :rationale "Emits standalone shell installer for zero-dependency agent environment setup")
+    (:sym :name "test-toolbelt-directive" :kind :fn :tokens 3
+          :rationale "Verifies toolbelt directive formatting")
+    (:sym :name "test-slash-commands" :kind :fn :tokens 3
+          :rationale "Verifies slash command definitions")
+    (:sym :name "test-agent-platforms" :kind :fn :tokens 3
+          :rationale "Verifies agent platforms configuration")
+    (:sym :name "test-sanitize-and-inject" :kind :fn :tokens 4
+          :rationale "Verifies instruction sanitization and directive injection")
+    (:sym :name "test-plan-installation" :kind :fn :tokens 3
+          :rationale "Verifies agent installation planning")
+    (:sym :name "test-emit-installer-script" :kind :fn :tokens 4
+          :rationale "Verifies standalone installer script generation")
   ])
