@@ -1,0 +1,86 @@
+;; Package Grammar & Exported Symbol Registry (ASN)
+;; @genseam/asl-pack
+(:grammar
+  :package @genseam/asl-pack
+  :version "0.1.0"
+  :tokens-baseline 1
+  :symbols [
+    ;; 1-Token Symbols (Baseline)
+    (:sym :name "BuildSpec" :kind :type :tokens 1)
+    (:sym :name "PackageArtifact" :kind :type :tokens 1)
+    (:sym :name "TargetOs" :kind :type :tokens 1)
+    (:sym :name "TargetArch" :kind :type :tokens 1)
+    (:sym :name "PlatformDescriptor" :kind :type :tokens 1)
+    (:sym :name "WasmRuntimeKind" :kind :type :tokens 1)
+    (:sym :name "TargetEnvironment" :kind :type :tokens 1)
+    (:sym :name "ExecutionMode" :kind :type :tokens 1)
+    (:sym :name "RuntimeProfile" :kind :type :tokens 1)
+    (:sym :name "StandaloneBundleConfig" :kind :type :tokens 1)
+    (:sym :name "BundleManifest" :kind :type :tokens 1)
+    (:sym :name "LibraryType" :kind :type :tokens 1)
+    (:sym :name "NativeLibrarySpec" :kind :type :tokens 1)
+    (:sym :name "ResolvedLinkerFlags" :kind :type :tokens 1)
+    (:sym :name "KotlinTargetSpec" :kind :type :tokens 1)
+    (:sym :name "SwiftPackageSpec" :kind :type :tokens 1)
+    (:sym :name "KernelSyscall" :kind :type :tokens 1)
+
+    ;; 2-Token Symbols (with :rationale)
+    (:sym :name "plan-package" :kind :fn :tokens 2
+          :rationale "Computes package build strategy and target artifact paths")
+    (:sym :name "make-platform" :kind :fn :tokens 2
+          :rationale "Constructs platform descriptor with OS, architecture, and ABI")
+    (:sym :name "target-triple" :kind :fn :tokens 2
+          :rationale "Formats platform descriptor into standard LLVM target triple string")
+    (:sym :name "is-windows?" :kind :fn :tokens 2
+          :rationale "Predicate testing if platform is Windows")
+    (:sym :name "is-macos?" :kind :fn :tokens 2
+          :rationale "Predicate testing if platform is macOS")
+    (:sym :name "is-linux?" :kind :fn :tokens 2
+          :rationale "Predicate testing if platform is Linux")
+    (:sym :name "runtime-name" :kind :fn :tokens 2
+          :rationale "Returns human-readable name of Wasm runtime variant")
+    (:sym :name "mode-name" :kind :fn :tokens 2
+          :rationale "Returns string representation of execution mode")
+    (:sym :name "magic-footer" :kind :fn :tokens 2
+          :rationale "Returns magic byte signature identifying standalone ASL binary bundles")
+    (:sym :name "requires-codesign?" :kind :fn :tokens 2
+          :rationale "Predicate checking if target bundle requires Apple/Windows code signing")
+    (:sym :name "run-tests" :kind :fn :tokens 2
+          :rationale "Executes unit test suite")
+
+    ;; >2 Token Symbols (with :rationale)
+    (:sym :name "generate-packaging-manifest" :kind :fn :tokens 3
+          :rationale "Serializes build plan into distributable packaging manifest")
+    (:sym :name "format-binary-name" :kind :fn :tokens 3
+          :rationale "Appends platform-specific executable extensions (.exe)")
+    (:sym :name "profile-for-runtime" :kind :fn :tokens 3
+          :rationale "Retrieves default execution profile for named Wasm runtime")
+    (:sym :name "recommend-runtime-profile" :kind :fn :tokens 3
+          :rationale "Recommends optimal runtime profile based on target environment")
+    (:sym :name "footer-size-bytes" :kind :fn :tokens 3
+          :rationale "Returns byte length of embedded standalone bundle metadata footer")
+    (:sym :name "format-footer-manifest" :kind :fn :tokens 3
+          :rationale "Encodes bundle metadata into fixed-length binary footer trailer")
+    (:sym :name "format-codesign-command" :kind :fn :tokens 3
+          :rationale "Constructs codesign CLI invocation for macOS Mach-O binaries")
+    (:sym :name "plan-standalone-bundle" :kind :fn :tokens 3
+          :rationale "Plans self-contained single-file executable creation")
+    (:sym :name "format-shared-lib-name" :kind :fn :tokens 4
+          :rationale "Formats dynamic shared library filename (.dylib, .so, .dll)")
+    (:sym :name "resolve-library-target" :kind :fn :tokens 3
+          :rationale "Resolves target dynamic library path and linker search flags")
+    (:sym :name "make-kernel-call" :kind :fn :tokens 3
+          :rationale "Encodes raw Linux kernel system call parameter frame")
+    (:sym :name "generate-jni-binding" :kind :fn :tokens 3
+          :rationale "Emits Java Native Interface C bridge headers and Kotlin stubs")
+    (:sym :name "generate-gradle-dependency" :kind :fn :tokens 3
+          :rationale "Emits Gradle build.gradle.kts dependency snippet for ASL AAR")
+    (:sym :name "generate-package-swift" :kind :fn :tokens 3
+          :rationale "Emits Swift Package Manager Package.swift manifest")
+    (:sym :name "generate-c-bridge-header" :kind :fn :tokens 4
+          :rationale "Emits C bridging header for Apple Swift FFI integration")
+    (:sym :name "test-footer-specs" :kind :fn :tokens 3
+          :rationale "Verifies bundle footer serialization integrity")
+    (:sym :name "test-codesign-detection" :kind :fn :tokens 3
+          :rationale "Verifies codesigning requirement logic across target OS variants")
+  ])
