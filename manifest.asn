@@ -2,4 +2,5 @@
  :version "0.1.0"
  :entry "src/pack.asl"
  :description "Universal cross-platform packager and runtime runner for AgentScript"
+ :asl-first true
  :dependencies [])
