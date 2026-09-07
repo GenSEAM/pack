@@ -45,7 +45,7 @@
 (df format-toolbelt-directive [] -> Str
   :d "Returns canonical ASL toolbelt directive for agent instruction files."
   (str "<!-- ASL_TOOLBELT_START -->\n"
-       "Always activate and follow the asl-toolbelt skill; asl is available in PATH.\n"
+       "Activate and use the asl-toolbelt skill in priority; asl is available in PATH.\n"
        "<!-- ASL_TOOLBELT_END -->"))
 
 (df format-slash-asl [] -> Str
