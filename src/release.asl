@@ -86,7 +86,7 @@
        "# AgentScript (ASL) Self-Update Runner\n"
        "# Auto-generated from pure AgentScript module: pack/src/release.asl\n"
        "set -eo pipefail\n\n"
-       "VERSION_URL=\"https://asl-lang.dev/version.asn\"\n"
+       "VERSION_URL=\"https://aslang.dev/version.asn\"\n"
        "CURRENT_BIN=\"$(command -v asl 2>/dev/null || echo \"${HOME}/.local/bin/asl\")\"\n\n"
        "echo \"🔍 Checking for AgentScript updates from ${VERSION_URL}...\";\n"
        "REMOTE_ASN=\"$(curl -fsSL \"${VERSION_URL}\" 2>/dev/null || true)\"\n"
@@ -101,5 +101,5 @@
        "  exit 0;\n"
        "fi\n\n"
        "echo \"🚀 Upgrading AgentScript: v${LOCAL_VER} ➔ v${REMOTE_VER}...\";\n"
-       "curl -fsSL https://asl-lang.dev/install.sh | bash\n"
+       "curl -fsSL https://aslang.dev/install.sh | bash\n"
        "echo \"✓ Successfully updated to v${REMOTE_VER}!\";\n"))
