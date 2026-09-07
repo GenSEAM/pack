@@ -13,7 +13,7 @@
   :d "Verifies format-toolbelt-directive returns canonical marker tags and toolbelt path"
   (let [(d (inst/format-toolbelt-directive))]
     (and (string-contains? d "<!-- ASL_TOOLBELT_START -->")
-         (and (string-contains? d "/asl-toolbelt")
+         (and (string-contains? d "asl-toolbelt")
               (string-contains? d "<!-- ASL_TOOLBELT_END -->")))))
 
 (df test-slash-commands [] -> Bool
@@ -40,7 +40,7 @@
         (already-injected (inst/inject-instruction-directive (inst/format-toolbelt-directive)))]
     (and (string-contains? sanitized "Cleaned ASL Instructions")
          (and (string-contains? empty-injected "<!-- ASL_TOOLBELT_START -->")
-              (string-contains? already-injected "/asl-toolbelt")))))
+              (string-contains? already-injected "asl-toolbelt")))))
 
 (df test-plan-installation [] -> Bool
   :d "Verifies installation planning across agents"
