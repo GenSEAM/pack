@@ -13,10 +13,11 @@
                 :c-bridge-header "ASLBridge.h"))
         (pkg-swift (sw/generate-package-swift spec))
         (c-hdr (sw/generate-c-bridge-header "ASLKit"))]
-    (and (string-contains? pkg-swift "name: \"ASLKit\"")
-         (and (string-contains? pkg-swift ".iOS(.v15)")
-              (and (string-contains? c-hdr "typedef struct {")
-                   (string-contains? c-hdr "asl_eval"))))))
+    (assert (string-contains? pkg-swift "name: \"ASLKit\"") "Package name must match")
+    (assert (string-contains? pkg-swift ".iOS(.v15)") "iOS min version must match")
+    (assert (string-contains? c-hdr "typedef struct {") "C bridge must declare struct")
+    (assert (string-contains? c-hdr "asl_eval") "C bridge must declare asl_eval")
+    true))
 
 (df test-kotlin-jni-generation [] -> Bool
   :d "Verifies Kotlin JNI external class and Gradle dependency generation."
@@ -25,14 +26,15 @@
                 :class-name "ASLAgent"))
         (jni-kt (kt/generate-jni-binding spec))
         (gradle (kt/generate-gradle-dependency spec))]
-    (and (string-contains? jni-kt "package io.genseam.asl")
-         (and (string-contains? jni-kt "class ASLAgent")
-              (and (string-contains? jni-kt "System.loadLibrary(\"asl_wamr_jni\")")
-                   (string-contains? gradle "implementation(\"io.genseam:asl-wamr-runtime"))))))
+    (assert (string-contains? jni-kt "package io.genseam.asl") "Kotlin package must match")
+    (assert (string-contains? jni-kt "class ASLAgent") "Kotlin class name must match")
+    (assert (string-contains? jni-kt "System.loadLibrary(\"asl_wamr_jni\")") "Kotlin must load native lib")
+    (assert (string-contains? gradle "implementation(\"io.genseam:asl-wamr-runtime") "Gradle dep must match")
+    true))
 
 (df run-tests [] -> Bool
   :d "Executes mobile target test suites."
-  (fold (fn [(acc Bool) (p Bool)] -> Bool (and acc p))
-        true
-        (list (test-swift-package-generation)
-              (test-kotlin-jni-generation))))
+  (do
+    (assert (test-swift-package-generation) "test-swift-package-generation must pass")
+    (assert (test-kotlin-jni-generation) "test-kotlin-jni-generation must pass")
+    true))
