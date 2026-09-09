@@ -27,7 +27,7 @@
         (cfg (s/StandaloneBundleConfig
                :runner-stub-path "templates/runner"
                :wasm-payload-path "dist/app.wasm"
-               :manifest-header "@pack:{v1}"
+               :manifest-header "pack:{v1}"
                :output-binary-path "dist/app-bin"
                :platform p-mac))
         (manifest (s/plan-standalone-bundle cfg 4096))]

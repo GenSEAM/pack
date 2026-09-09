@@ -40,7 +40,7 @@
 
 (df generate-packaging-manifest [(artifact PackageArtifact)] -> Str
   :d "Serializes package artifact plan into standard ASN metadata header."
-  (str "@pack:{"
+  (str "pack:{"
        (.-binary-name artifact) "|"
        (.-target-triple artifact) "|"
        (.-runtime-name artifact) "|"

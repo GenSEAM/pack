@@ -21,7 +21,7 @@
     :version version
     :repo-url "https://github.com/GenSEAM/asl.git"
     :binary-base-url (str "https://github.com/GenSEAM/asl/releases/download/v" version)
-    :npm-package-name "@genseam/asl"))
+    :npm-package-name "asl"))
 
 (df emit-build-from-source-sh [(cfg DistConfig)] -> Str
   :d "Generates standalone POSIX build-from-source shell script."

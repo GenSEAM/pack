@@ -62,7 +62,7 @@
         (manifest (pk/generate-packaging-manifest artifact))]
     (assert (= (.-target-triple artifact) "aarch64-apple-darwin") "Artifact triple must match")
     (assert (string-contains? (.-binary-name artifact) "asl-aarch64-apple-darwin") "Binary name must match")
-    (assert (string-contains? manifest "@pack:{asl-aarch64-apple-darwin") "Manifest must contain pack header")
+    (assert (string-contains? manifest "pack:{asl-aarch64-apple-darwin") "Manifest must contain pack header")
     (assert (string-contains? manifest "|Wasmtime (Cranelift)|") "Manifest must contain runtime name")
     true))
 

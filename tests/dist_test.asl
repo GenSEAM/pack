@@ -7,7 +7,7 @@
   :d "Verifies distribution configuration setup."
   (let [(cfg (d/make-dist-config "0.1.0"))]
     (assert (= (.-version cfg) "0.1.0") "Version must be 0.1.0")
-    (assert (= (.-npm-package-name cfg) "@genseam/asl") "Package name must match")
+    (assert (= (.-npm-package-name cfg) "asl") "Package name must match")
     (assert (string-contains? (.-binary-base-url cfg) "v0.1.0") "Binary URL must contain version")
     true))
 
@@ -34,7 +34,7 @@
   (let [(cfg (d/make-dist-config "0.1.0"))
         (pkg (d/emit-npm-package-json cfg))
         (launcher (d/emit-npm-bin cfg))]
-    (assert (string-contains? pkg "\"name\": \"@genseam/asl\"") "Package name must be serialized")
+    (assert (string-contains? pkg "\"name\": \"asl\"") "Package name must be serialized")
     (assert (string-contains? pkg "\"bin\":") "Package bin field must exist")
     (assert (string-contains? launcher "spawn") "Launcher must invoke spawn")
     true))

@@ -37,7 +37,7 @@
 
 (df format-footer-manifest [(payload-size I64) (magic Str)] -> Str
   :d "Formats metadata descriptor for payload footer."
-  (str "@pack-foot:{" (string-from-int64 payload-size) "|" magic "}"))
+  (str "pack-foot:{" (string-from-int64 payload-size) "|" magic "}"))
 
 (df format-codesign-command [(target-path Str)] -> Str
   :d "Emits ad-hoc codesigning invocation satisfying macOS AMFI."
