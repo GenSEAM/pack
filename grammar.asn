@@ -21,7 +21,22 @@
     (:sym :name "NativeLibrarySpec" :kind :type :tokens 1)
     (:sym :name "ResolvedLinkerFlags" :kind :type :tokens 1)
     (:sym :name "KotlinTargetSpec" :kind :type :tokens 1)
+    (:sym :name "KotlinAppSpec" :kind :type :tokens 1)
     (:sym :name "SwiftPackageSpec" :kind :type :tokens 1)
+    (:sym :name "SwiftAppSpec" :kind :type :tokens 1)
+    (:sym :name "MobilePreviewSpec" :kind :type :tokens 1)
+    (:sym :name "LashLaminationSpec" :kind :type :tokens 1)
+    (:sym :name "LashKeypoint2D" :kind :type :tokens 1)
+    (:sym :name "LashMeshResult" :kind :type :tokens 1)
+    (:sym :name "PreviewServerSpec" :kind :type :tokens 1)
+    (:sym :name "LandmarkProviderKind" :kind :type :tokens 1)
+    (:sym :name "LandmarkConfigSpec" :kind :type :tokens 1)
+    (:sym :name "EyeSide" :kind :type :tokens 1)
+    (:sym :name "EyeInstance" :kind :type :tokens 1)
+    (:sym :name "MultiEyeDetectionFrame" :kind :type :tokens 1)
+    (:sym :name "PhotorealLashShadingSpec" :kind :type :tokens 1)
+    (:sym :name "LashRestructuringSpec" :kind :type :tokens 1)
+    (:sym :name "ImageDrivenLashFrame" :kind :type :tokens 1)
     (:sym :name "KernelSyscall" :kind :type :tokens 1)
     (:sym :name "DistConfig" :kind :type :tokens 1)
     (:sym :name "ReleasePlan" :kind :type :tokens 1)
@@ -85,6 +100,58 @@
           :rationale "Emits Swift Package Manager Package.swift manifest")
     (:sym :name "generate-c-bridge-header" :kind :fn :tokens 4
           :rationale "Emits C bridging header for Apple Swift FFI integration")
+    (:sym :name "generate-xcframework-script" :kind :fn :tokens 3
+          :rationale "Emits shell script to package multi-arch XCFramework for physical iOS and simulator")
+    (:sym :name "generate-swiftui-entrypoint" :kind :fn :tokens 3
+          :rationale "Emits SwiftUI 6 application scene entrypoint and root window")
+    (:sym :name "generate-swift-observable-store" :kind :fn :tokens 4
+          :rationale "Emits Swift 6 observation framework reactive store binding ASL native memory")
+    (:sym :name "generate-kmp-build-gradle" :kind :fn :tokens 4
+          :rationale "Emits Kotlin Multiplatform build.gradle.kts with Android, iOS, and Wasm targets")
+    (:sym :name "generate-compose-activity" :kind :fn :tokens 3
+          :rationale "Emits Android ComponentActivity using Jetpack Compose UI surface")
+    (:sym :name "generate-kmp-state-flow" :kind :fn :tokens 4
+          :rationale "Emits Kotlin StateFlow observable store for multiplatform ASL dispatch")
+    (:sym :name "generate-device-preview-html" :kind :fn :tokens 4
+          :rationale "Generates HTML5 dual-device simulator with iPhone and Pixel mockups")
+    (:sym :name "generate-preview-wasm-manifest" :kind :fn :tokens 4
+          :rationale "Emits ASN runtime configuration manifest for in-browser Wasm execution")
+    (:sym :name "make-default-lash-spec" :kind :fn :tokens 3
+          :rationale "Constructs standard calibrated lamination enhancement parameters")
+    (:sym :name "compute-eyelid-spline" :kind :fn :tokens 3
+          :rationale "Computes parametric spline geometry and memory footprint for low-end GPU execution")
+    (:sym :name "generate-swiftui-lashes-camera-view" :kind :fn :tokens 4
+          :rationale "Emits complete SwiftUI 6 camera view with real-time lash lamination shader overlay")
+    (:sym :name "generate-compose-lashes-camera-view" :kind :fn :tokens 4
+          :rationale "Emits complete Jetpack Compose camera view with CameraX and zero-allocation OpenGL ES lash spline overlay")
+    (:sym :name "generate-lashes-preview-html" :kind :fn :tokens 4
+          :rationale "Emits full-featured in-browser WebAssembly simulator for Lamy Lashes camera AR with interactive sliders")
+    (:sym :name "make-default-photoreal-shading-spec" :kind :fn :tokens 4
+          :rationale "Constructs standard Marschner anisotropic shading parameters for natural advertising lashes")
+    (:sym :name "process-multi-eye-frame" :kind :fn :tokens 4
+          :rationale "Processes multi-eye frame with zero GC heap churn across 1 to 8 eyes")
+    (:sym :name "generate-tiktok-effect-manifest" :kind :fn :tokens 4
+          :rationale "Emits ByteDance Effect SDK and Effect House AR filter configuration manifest and GLSL ES 3.0 shader")
+    (:sym :name "make-default-restructuring-spec" :kind :fn :tokens 4
+          :rationale "Constructs standard calibrated natural lash extraction and combing parameters")
+    (:sym :name "format-restructuring-spec-asn" :kind :fn :tokens 4
+          :rationale "Serializes lash restructuring specification into canonical AgentScript Notation ASN S-expression format")
+    (:sym :name "format-restructuring-spec-json" :kind :fn :tokens 4
+          :rationale "Converts lash restructuring specification into standard validated JSON format")
+    (:sym :name "generate-image-driven-warp-shader" :kind :fn :tokens 4
+          :rationale "Emits GLSL ES 3.0 shader executing image-space ridge extraction directional vector combing and melanin tint")
+    (:sym :name "make-preview-server-spec" :kind :fn :tokens 3
+          :rationale "Constructs standard mobile preview dev server specification")
+    (:sym :name "format-hot-reload-patch-frame" :kind :fn :tokens 4
+          :rationale "Formats an atomic differential patch frame into compact JSON for simulator")
+    (:sym :name "generate-preview-server-script" :kind :fn :tokens 4
+          :rationale "Emits a lightweight standalone WebSocket hot-reload server script")
+    (:sym :name "resolve-optimal-landmark-provider" :kind :fn :tokens 4
+          :rationale "Resolves optimal landmark detection strategy based on platform capabilities")
+    (:sym :name "generate-landmark-adapter-swift" :kind :fn :tokens 4
+          :rationale "Emits Swift 6 Vision framework landmark tracking delegate")
+    (:sym :name "generate-landmark-adapter-kotlin" :kind :fn :tokens 4
+          :rationale "Emits Kotlin Android landmark tracking adapter with automatic heuristic fallback")
     (:sym :name "test-footer-specs" :kind :fn :tokens 3
           :rationale "Verifies bundle footer serialization integrity")
     (:sym :name "test-codesign-detection" :kind :fn :tokens 3
