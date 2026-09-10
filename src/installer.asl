@@ -23,7 +23,7 @@
   (:f content Str "Full markdown content of slash command"))
 
 (dfs AgentPlatform
-  (:f id Str "Platform identifier: claude, cursor, windsurf, antigravity, factory, agents, codex")
+  (:f id Str "Platform identifier: claude, cursor, windsurf, agy, factory, agents, codex")
   (:f name Str "Human-readable agent environment name")
   (:f detected Bool "True if platform installation path exists on current system")
   (:f skills-dirs (List Str) "Target directory paths for skill folders")
@@ -113,7 +113,7 @@
     :commands-dirs cmds))
 
 (df default-agent-platforms [(home Str)] -> (List AgentPlatform)
-  :d "Returns standard supported agent platforms: claude, cursor, windsurf, antigravity, factory, agents, codex."
+  :d "Returns standard supported agent platforms: claude, cursor, windsurf, agy, factory, agents, codex."
   (list
     (make-agent-platform
       "claude"
@@ -138,8 +138,8 @@
       (list (str home "/.codeium/windsurf/memories/global_rules.md"))
       (list))
     (make-agent-platform
-      "antigravity"
-      "Antigravity / Gemini"
+      "agy"
+      "agy (Antigravity CLI)"
       true
       (list (str home "/.gemini/config/skills")
             (str home "/.gemini/skills"))
