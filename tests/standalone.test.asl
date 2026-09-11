@@ -6,6 +6,10 @@
   :i [(standalone :a st)
       (platform :a plat)])
 
+(df string-equals? [(a Str) (b Str)] -> Bool
+  :d "Compares two strings for equality."
+  (= a b))
+
 (df test-footer-specs [] -> Bool
   :d "Verifies canonical 8-byte magic footer and 16-byte fixed trailer footprint."
   (do

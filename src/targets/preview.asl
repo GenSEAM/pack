@@ -5,6 +5,10 @@
       generate-preview-wasm-manifest]
   :i [])
 
+(df int-to-string [(n Int64)] -> Str
+  :d "Converts integer to string representation."
+  (string-from-int64 n))
+
 (dfs MobilePreviewSpec
   (:f app-name Str "Application display name e.g. ASL Mobile")
   (:f default-platform Str "Initial active device view: ios or android")

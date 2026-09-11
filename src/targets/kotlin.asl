@@ -127,4 +127,8 @@
        "        val resultBytes = agent.evalModule(moduleName, inputBytes)\n"
        "        _state.value = resultBytes.decodeToString()\n"
        "    }\n"
-       "}\n"))
+       "}\n"))(df int-to-string [(n Int64)] -> Str
+  :d "Converts integer to string representation."
+  (string-from-int64 n))
+
+

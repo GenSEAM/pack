@@ -1,6 +1,7 @@
 (module asl-pack/installer
   :d "Pure AgentScript multi-agent skills installer, toolbelt directive injector, and environment detection orchestrator."
-  :x [SlashCommandSpec
+  :x [foldl
+      SlashCommandSpec
       AgentPlatform
       InstallerConfig
       InstallationPlan
@@ -15,6 +16,10 @@
       plan-agent-installation
       emit-standalone-installer-script]
   :i [(platform :a plat)])
+
+(df foldl [f acc xs]
+  :d "Left-fold reduction over list elements using binary function f."
+  (fold f acc xs))
 
 (dfs SlashCommandSpec
   (:f name Str "Slash command markdown filename e.g. asl.md")
@@ -212,14 +217,15 @@
        "# AgentScript (ASL) Multi-Agent Skills & Toolbelt Installer\n"
        "# Generated from pure AgentScript module: pack/src/installer.asl\n"
        "set -eo pipefail\n\n"
-       "echo \"🚀 [ASL] Running pure AgentScript Multi-Agent Skills Setup...\";\n"
+       "echo \"[INSTALL] Running pure AgentScript Multi-Agent Skills Setup...\";\n"
        "WORKSPACE_ROOT=\"$(pwd)\"\n"
        "HOME_DIR=\"${HOME}\"\n\n"
+       "TOOLBELT_DIRECTIVE=\"" (format-toolbelt-directive) "\"\n\n"
        "# Local instructions injection\n"
        "for F in \"$WORKSPACE_ROOT/AGENTS.md\" \"$WORKSPACE_ROOT/.cursorrules\"; do\n"
        "  cat << 'EOF' > \"$F\"\n"
        (format-toolbelt-directive) "\n"
        "EOF\n"
-       "  echo \"✓ Updated $F\"\n"
+       "  echo \"[OK] Updated $F\"\n"
        "done\n\n"
-       "echo \"✓ Setup complete via pure ASL installer.\";\n"))
+       "echo \"[OK] Setup complete via pure ASL installer.\";\n"))

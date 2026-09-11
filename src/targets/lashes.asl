@@ -28,6 +28,27 @@
       generate-image-driven-warp-shader]
   :i [])
 
+(df int-to-string [(n Int64)] -> Str
+  :d "Converts integer to string representation."
+  (string-from-int64 n))
+
+(df cast-int [(x F64)] -> Int64
+  :d "Truncates float to integer."
+  (option-unwrap (float64-to-int64 x)))
+
+(df cast-float [(n Int64)] -> F64
+  :d "Converts integer to float."
+  (float n))
+
+(df sqrt [(x F64)] -> F64
+  :d "Calculates square root using Newton approximation."
+  (if (<= x 0.0)
+      0.0
+      (fold (fn [(guess F64) (_ I64)] -> F64
+              (* 0.5 (+ guess (/ x guess))))
+            x
+            (range 0 12))))
+
 (dfs LashLaminationSpec
   (:f lift-angle F64 "Upward lash lift angle in degrees e.g. 60.0")
   (:f curl-intensity F64 "Parametric curvature intensity 0.0 to 1.0")

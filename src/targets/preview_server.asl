@@ -6,6 +6,10 @@
       generate-preview-server-script]
   :i [])
 
+(df int-to-string [(n Int64)] -> Str
+  :d "Converts integer to string representation."
+  (string-from-int64 n))
+
 (dfs PreviewServerSpec
   (:f port Int64 "WebSocket listening port e.g. 8080")
   (:f heartbeat-ms Int64 "Keepalive ping interval in milliseconds")
