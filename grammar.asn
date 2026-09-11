@@ -116,30 +116,6 @@
           :rationale "Generates HTML5 dual-device simulator with iPhone and Pixel mockups")
     (:sym :name "generate-preview-wasm-manifest" :kind :fn :tokens 4
           :rationale "Emits ASN runtime configuration manifest for in-browser Wasm execution")
-    (:sym :name "make-default-lash-spec" :kind :fn :tokens 3
-          :rationale "Constructs standard calibrated lamination enhancement parameters")
-    (:sym :name "compute-eyelid-spline" :kind :fn :tokens 3
-          :rationale "Computes parametric spline geometry and memory footprint for low-end GPU execution")
-    (:sym :name "generate-swiftui-lashes-camera-view" :kind :fn :tokens 4
-          :rationale "Emits complete SwiftUI 6 camera view with real-time lash lamination shader overlay")
-    (:sym :name "generate-compose-lashes-camera-view" :kind :fn :tokens 4
-          :rationale "Emits complete Jetpack Compose camera view with CameraX and zero-allocation OpenGL ES lash spline overlay")
-    (:sym :name "generate-lashes-preview-html" :kind :fn :tokens 4
-          :rationale "Emits full-featured in-browser WebAssembly simulator for Lamy Lashes camera AR with interactive sliders")
-    (:sym :name "make-default-photoreal-shading-spec" :kind :fn :tokens 4
-          :rationale "Constructs standard Marschner anisotropic shading parameters for natural advertising lashes")
-    (:sym :name "process-multi-eye-frame" :kind :fn :tokens 4
-          :rationale "Processes multi-eye frame with zero GC heap churn across 1 to 8 eyes")
-    (:sym :name "generate-tiktok-effect-manifest" :kind :fn :tokens 4
-          :rationale "Emits ByteDance Effect SDK and Effect House AR filter configuration manifest and GLSL ES 3.0 shader")
-    (:sym :name "make-default-restructuring-spec" :kind :fn :tokens 4
-          :rationale "Constructs standard calibrated natural lash extraction and combing parameters")
-    (:sym :name "format-restructuring-spec-asn" :kind :fn :tokens 4
-          :rationale "Serializes lash restructuring specification into canonical AgentScript Notation ASN S-expression format")
-    (:sym :name "format-restructuring-spec-json" :kind :fn :tokens 4
-          :rationale "Converts lash restructuring specification into standard validated JSON format")
-    (:sym :name "generate-image-driven-warp-shader" :kind :fn :tokens 4
-          :rationale "Emits GLSL ES 3.0 shader executing image-space ridge extraction directional vector combing and melanin tint")
     (:sym :name "make-preview-server-spec" :kind :fn :tokens 3
           :rationale "Constructs standard mobile preview dev server specification")
     (:sym :name "format-hot-reload-patch-frame" :kind :fn :tokens 4

@@ -36,7 +36,7 @@
          "const path = require('path');\n"
          "const PORT = " p-str ";\n"
          "const server = http.createServer((req, res) => {\n"
-         "  const file = req.url === '/' ? 'scratch/lamy_lashes_preview.html' : req.url.slice(1);\n"
+         "  const file = req.url === '/' ? 'scratch/mobile_preview.html' : req.url.slice(1);\n"
          "  const filePath = path.resolve(process.cwd(), file);\n"
          "  if (fs.existsSync(filePath)) {\n"
          "    res.writeHead(200, { 'Content-Type': file.endsWith('.html') ? 'text/html' : 'text/plain' });\n"
