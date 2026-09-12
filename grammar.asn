@@ -25,18 +25,7 @@
     (:sym :name "SwiftPackageSpec" :kind :type :tokens 1)
     (:sym :name "SwiftAppSpec" :kind :type :tokens 1)
     (:sym :name "MobilePreviewSpec" :kind :type :tokens 1)
-    (:sym :name "LashLaminationSpec" :kind :type :tokens 1)
-    (:sym :name "LashKeypoint2D" :kind :type :tokens 1)
-    (:sym :name "LashMeshResult" :kind :type :tokens 1)
     (:sym :name "PreviewServerSpec" :kind :type :tokens 1)
-    (:sym :name "LandmarkProviderKind" :kind :type :tokens 1)
-    (:sym :name "LandmarkConfigSpec" :kind :type :tokens 1)
-    (:sym :name "EyeSide" :kind :type :tokens 1)
-    (:sym :name "EyeInstance" :kind :type :tokens 1)
-    (:sym :name "MultiEyeDetectionFrame" :kind :type :tokens 1)
-    (:sym :name "PhotorealLashShadingSpec" :kind :type :tokens 1)
-    (:sym :name "LashRestructuringSpec" :kind :type :tokens 1)
-    (:sym :name "ImageDrivenLashFrame" :kind :type :tokens 1)
     (:sym :name "KernelSyscall" :kind :type :tokens 1)
     (:sym :name "DistConfig" :kind :type :tokens 1)
     (:sym :name "ReleasePlan" :kind :type :tokens 1)
@@ -122,15 +111,9 @@
           :rationale "Formats an atomic differential patch frame into compact JSON for simulator")
     (:sym :name "generate-preview-server-script" :kind :fn :tokens 4
           :rationale "Emits a lightweight standalone WebSocket hot-reload server script")
-    (:sym :name "resolve-optimal-landmark-provider" :kind :fn :tokens 4
-          :rationale "Resolves optimal landmark detection strategy based on platform capabilities")
-    (:sym :name "generate-landmark-adapter-swift" :kind :fn :tokens 4
-          :rationale "Emits Swift 6 Vision framework landmark tracking delegate")
-    (:sym :name "generate-landmark-adapter-kotlin" :kind :fn :tokens 4
-          :rationale "Emits Kotlin Android landmark tracking adapter with automatic heuristic fallback")
-    (:sym :name "test-footer-specs" :kind :fn :tokens 3
+    (:sym :name "test-footer-constants" :kind :fn :tokens 3
           :rationale "Verifies bundle footer serialization integrity")
-    (:sym :name "test-codesign-detection" :kind :fn :tokens 3
+    (:sym :name "test-codesign-evaluation" :kind :fn :tokens 3
           :rationale "Verifies codesigning requirement logic across target OS variants")
     (:sym :name "make-dist-config" :kind :fn :tokens 3
           :rationale "Initializes release distribution parameters and artifact paths")
