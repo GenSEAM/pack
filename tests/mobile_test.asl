@@ -1,10 +1,10 @@
 (module asl-pack/mobile-test
   :d "Unit tests for Swift Package Manager and Kotlin Multiplatform bridge generation."
   :x [run-tests]
-  :i [(targets/swift :a sw)
-      (targets/kotlin :a kt)
-      (targets/preview :a prev)
-      (targets/preview_server :a ps)])
+  :i [(asl-pack/targets/swift :a sw)
+      (asl-pack/targets/kotlin :a kt)
+      (asl-pack/targets/preview :a prev)
+      (asl-pack/targets/preview-server :a ps)])
 
 (df test-swift-package-generation [] -> Bool
   :d "Verifies Package.swift and C-bridge header generation."
